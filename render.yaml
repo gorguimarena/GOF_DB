@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: db-postgres
+    name: GOF_DB
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
@@ -12,5 +12,8 @@ services:
       value: gorgui02
     - key: POSTGRES_DB
       value: GOF_DB
+    - key: POSTGRES_HOST_AUTH_METHOD
+      value: trust
+
     ports:
       - 5432
