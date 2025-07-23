@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: db-postgres
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.postgres
+    autoDeploy: false
+    envVars:
+      - key: POSTGRES_USER
+        value: gorgui02
+      - key: POSTGRES_PASSWORD
+        value: gorgui02
+      - key: POSTGRES_DB
+        value: GOF_DB
+    ports:
+      - 5432
